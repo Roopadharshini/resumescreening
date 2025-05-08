@@ -4,7 +4,7 @@ from datetime import datetime
 import base64
 
 
-MONGO_URI =  st.secrets("MONGO_URI", "mongodb://localhost:27017/")
+MONGO_URI =  st.secrets.get("MONGO_URI", "mongodb://localhost:27017/")
 client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
 # MongoDB connection
 #client = pymongo.MongoClient("mongodb://localhost:27017/")
