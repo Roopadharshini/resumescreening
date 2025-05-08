@@ -1,0 +1,30 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Pickle files
+*.pickle
+*.joblib
+
+# VSCode workspace settings (optional, personal)
+.vscode/
+
+# Log files
+*.log
