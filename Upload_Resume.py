@@ -11,9 +11,10 @@ import json
 import google.generativeai as genai
 import random
 
-# Initialize clients and models
-mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = mongo_client["resume_db"]
+import os
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
+db = client["resume_db"]
 hr_collection = db["hr_requirements"]
 resumes_collection = db["resumes"]
 
