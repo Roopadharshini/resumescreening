@@ -8,7 +8,7 @@ from pymongo import MongoClient
 #client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
 # MongoDB connection
 #client = pymongo.MongoClient("mongodb://localhost:27017/")
-client = MongoClient(st.secrets["mongodb"]["MONGO_URI "])
+client = MongoClient(st.secrets["mongodb"]["MONGO_URI"])
 db = client["resume_db"]
 hr_collection = db["hr_requirements"]
 resumes_collection = db["resumes"]

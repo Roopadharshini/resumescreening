@@ -12,7 +12,7 @@ import google.generativeai as genai
 import random
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
-client = MongoClient(st.secrets["mongodb"]["MONGO_URI "])
+client = MongoClient(st.secrets["mongodb"]["MONGO_URI"])
 
 db = client["resume_db"]
 hr_collection = db["hr_requirements"]
