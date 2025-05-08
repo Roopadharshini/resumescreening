@@ -2,7 +2,7 @@ import streamlit as st
 import pymongo
 from datetime import datetime
 import base64
-
+from pymongo.errors import ServerSelectionTimeoutError
 
 MONGO_URI =  st.secrets.get("MONGO_URI", "mongodb://localhost:27017/")
 client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)

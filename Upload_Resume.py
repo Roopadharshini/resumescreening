@@ -10,7 +10,7 @@ import docx2txt
 import json
 import google.generativeai as genai
 import random
-
+from pymongo.errors import ServerSelectionTimeoutError
 
 MONGO_URI =  st.secrets.get("MONGO_URI", "mongodb://localhost:27017/")
 client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
