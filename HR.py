@@ -3,11 +3,12 @@ import pymongo
 from datetime import datetime
 import base64
 from pymongo.errors import ServerSelectionTimeoutError
-
-MONGO_URI =  st.secrets.get("MONGO_URI", "mongodb://localhost:27017/")
-client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
+from pymongo import MongoClient
+#MONGO_URI =  st.secrets.get("MONGO_URI", "mongodb://localhost:27017/")
+#client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
 # MongoDB connection
 #client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = MongoClient(st.secrets["mongodb"]["MONGO_URI "])
 db = client["resume_db"]
 hr_collection = db["hr_requirements"]
 resumes_collection = db["resumes"]
