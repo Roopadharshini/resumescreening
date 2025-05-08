@@ -11,8 +11,8 @@ import json
 import google.generativeai as genai
 import random
 
-import os
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+
+MONGO_URI =  st.secrets("MONGO_URI", "mongodb://localhost:27017/")
 client = pymongo.MongoClient(MONGO_URI,serverSelectionTimeoutMS=5000)
 db = client["resume_db"]
 hr_collection = db["hr_requirements"]
